@@ -1,0 +1,36 @@
+body {
+	background-color: #d3d3d3;
+}
+
+header {
+	font-size: 200%;
+    color: #3d64b8;
+    margin-top: 90px;
+    margin-bottom: 50px;
+
+}
+p {
+	display:block;
+	overflow: hidden;
+}
+#word {
+	margin-bottom: -20px;
+	display: flex;
+}
+#listLetters {
+	margin-bottom: -20px;
+}
+
+
+
+
+
+#word li {
+	margin-right: 10px;
+}
+
+#listedLetters li {
+	margin-right: 10px;
+	display: inline;
+}
+

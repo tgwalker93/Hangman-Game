@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Hangman Game!</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!--- RESET-->
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+
+	<!--- STYLE-->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+
+
+</head>
+<body>
+
+
+
+	<!--- HEADER!-->	
+	<div class="row">
+	<div class="col-md-3">	
+
+		</div>
+		<div class="col-md-4">	
+		<header> <h1> <strong> Video Game Hangman! </strong></h1> </header>
+		</div>
+	</div>
+
+
+	<!--- BEGIN ROW UNDER HEADER-->
+	<div class="row">
+		<div class="col-md-3">	
+
+		</div>	
+		<div class="col-md-4">	
+	  		
+
+
+	  		<div id="game">
+	    		<p>Type any letter to make a guess!</p>
+			</div>
+
+
+
+			<ul id="word">
+				<li id="guess"> </li>
+			</ul>
+
+
+
+			<br>
+		</div>
+
+
+
+
+		<div class="col-md-4">
+
+
+			<div id="winsAndLosses">
+				<p>Wins: 0</p>
+				<p>Losses: 0</p>
+				<p> Guesses Remaining: 5</p>
+			</div>
+
+
+		</div>
+
+
+	</div>
+	<!--- END ROW UNDER HEADER-->
+	<div class="row">
+		<div class="col-md-3">	
+
+		</div>
+
+		<div class="col-md-4">
+
+		
+			<p> Guesses Made: </p>
+
+
+
+			<ul id="listedLetters">
+				<li id="guessedLetter"> </li>
+			</ul>	
+
+			<br>
+
+
+
+
+		</div>
+
+
+
+
+	</div>
+
+
+
+  <!--- Javascript-->
+  <script type="text/javascript" src="assets/javascript/hangman.js"></script>
+	
+</body>
+</html>
