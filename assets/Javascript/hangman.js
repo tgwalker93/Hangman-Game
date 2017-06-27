@@ -2,7 +2,7 @@
     var wins = 0;
     var losses = 0;
     var guessesRemaining = 5;
-    var words = ["sonic"];
+    var words = ["sonic", "mario", "link", "pikachu", "fox"];
     var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
 
@@ -26,7 +26,7 @@
     correct = document.createElement('ul');
 
     for (var i = 0; i < computerGuess.length; i++) {
-      
+
       var ul = document.getElementById("word");
       var li = document.createElement("li");
       li.appendChild(document.createTextNode("_"));
@@ -39,16 +39,32 @@
 
     //displays new word
     function newWord() {
-      var computerGuess = words[Math.floor(Math.random() * words.length)];
 
-      for (var i=0; i < computerGuess.length; i++) {
-          document.getElementById("letter" + i).innerHTML = "_";
-          //li.appendChild(document.createTextNode("_"));
-          //li.setAttribute("id", ("letter"+i))
-          //ul.appendChild(li);
-       
+    document.getElementById("word").innerHTML = "";
 
-      }
+
+
+
+// OLD FOR LOOP 
+//	for (var i=0; i < computerGuess.length; i++) {
+      //document.getElementById("letter" + i).innerHTML = "_";
+
+
+
+//      var oldLi = document.getElementById("letter" + i);
+//      var oldUl = document.getElementById("word");
+ //     oldUl.parentNode.removeChild(oldLi);
+     //  var ul = document.getElementById("word");
+  	  // var li = document.createElement("li");
+     //  li.appendChild(document.createTextNode("_"));
+     //  li.setAttribute("id", ("letter"+i))
+     //  ul.appendChild(li);
+  // *********************************************************************************************
+//	  }
+      computerGuess = words[Math.floor(Math.random() * words.length)];
+      displayWord();
+      document.getElementById("listedLetters").innerHTML = "<li id='guess'> </li>";
+
 
 
     }
@@ -71,13 +87,18 @@
       // Determines which key was pressed.
       var userGuess = event.key;
 
+      
 
+ 
+
+ // ADDS KEY PRESSED TO LIST AND DISPLAYS TO GUESSED LETTERS ****************---------------------------------------------------------------------------------
+      function typedLetters() {
       var liList = document.getElementById("listedLetters").getElementsByTagName("li");
 
       var count = liList.length
       var countLoops = 0;
 
-      // ADDS KEY PRESSED TO LIST AND DISPLAYS -----------------------------------------------------------------------------------------
+
       for (i=0; i<count; i++) {
           countLoops ++;
           if (document.getElementById("guessedLetter"+i)!== null) {
@@ -85,19 +106,35 @@
                       if (getItem===userGuess){
                       countLoops --;
                       }
+
           }
 
           else if (countLoops===count) {
-            var ul = document.getElementById("listedLetters");
-            var li = document.createElement("li");
-            li.appendChild(document.createTextNode(userGuess));
-            li.setAttribute("id", ("guessedLetter"+i))
-            ul.appendChild(li);
 
-          }
+		         	
+				          	var ul = document.getElementById("listedLetters");
+				            var li = document.createElement("li");
+				            li.appendChild(document.createTextNode(userGuess));
+				            li.setAttribute("id", ("guessedLetter"+i))
+				            ul.appendChild(li);
+		        		  			
+          	      }
+          	  }
+		}
+//************************************* END FOR LOOP ******************************************REGEX ABOVE
 
 
-      }
+
+		//USING REGEX TO MAKE SURE THAT typedLetters() DOESN'T LOG NONE REGULAR AND LOWERCASE LETTERS
+		var pat = /^[a-z]+$/;
+	  	if(pat.test(userGuess)){
+
+	  		typedLetters();
+
+
+	  	}	
+
+
 
 
 
@@ -131,7 +168,18 @@
         for(i=0; i<word.length; i++) {
 
               if (word[i] === userGuess) {
-                    var li = document.getElementById(("letter"+i)).innerHTML=word[i];
+
+
+              		//Changes _ to correct letter guessed
+              		for (i=0; i<word.length; i++) {
+              			if(word[i] === userGuess) {
+              			var li = document.getElementById(("letter"+i)).innerHTML=word[i];
+
+              			}
+
+
+              		}
+     
     
 
 
@@ -192,7 +240,15 @@
               wrongCounter ++;
             }
             if (wrongCounter===word.length) {
-              guessesRemaining --;
+
+
+            	var pat = /^[a-z]+$/;
+	  			if(pat.test(userGuess)){
+
+	  			guessesRemaining --;
+	  				}
+
+           
               //UPDATES WIN AND LOSS COUNTER -----------------------------
               var guessCounter = "Wins: " + wins + "<br />" + 
                                 "Losses: " + losses + "<br />" +
@@ -242,7 +298,12 @@
       //  }   
     }
 
-    checkList(computerGuess);
+
+
+     
+     
+     checkList(computerGuess);
+
     //Function to restart the game! 
     function restartGame() {
 
@@ -257,6 +318,12 @@
     }
 
 
+
+
+
+
+
+ //END OF DOCUMENT ON KEY UP EVENT
   }
 
 
