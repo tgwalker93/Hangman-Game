@@ -17,50 +17,63 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 
+	<!--- Google Fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Frijole|Permanent+Marker" rel="stylesheet">
+
+
 
 </head>
 <body>
 
 
 
+
 	<!--- HEADER!-->	
-	<div class="row">
-	<div class="col-md-3">	
+	<div class="row" id="titlerow">
+	<div class="col-md-12">	
 
-		</div>
-		<div class="col-md-4">	
-		<header> <h1> <strong> Video Game Hangman! </strong></h1> </header>
-		</div>
+
+		<header> <h1 id="title"> <strong> Classic Video Game Hangman! </strong></h1> </header>
+
+
+		<hr>
+
+
+
 	</div>
+	</div>
+	<!--- END HEADER-->
 
-
-	<!--- BEGIN ROW UNDER HEADER-->
+	<!-- GUESSES MADE HEADER -->
 	<div class="row">
-		<div class="col-md-3">	
+		<div class="col-md-4" id=guessesMade>
 
-		</div>	
-		<div class="col-md-4">	
-	  		
+	
+		<p> Guesses Made: </p>
 
 
-	  		<div id="game">
-	    		<p>Type any letter to make a guess!</p>
-			</div>
+		<hr>
 
 
 
-			<ul id="word">
-				<li id="guess"> </li>
-			</ul>
+		<ul id="listedLetters">
+			<li id="guessedLetter"> </li>
+		</ul>	
+
+		<br>
 
 
 
-			<br>
+
 		</div>
 
+		<div class="col-md-4">
+			
+		<img class="pull-right img-responsive" id="mysteryCharacter" src="assets/images/mystery.jpg" alt="character" width=200 height=200 />
 
 
 
+		</div>
 		<div class="col-md-4">
 
 
@@ -75,35 +88,75 @@
 
 
 	</div>
-	<!--- END ROW UNDER HEADER-->
+
 	<div class="row">
 		<div class="col-md-3">	
-
-		</div>
-
-		<div class="col-md-4">
-
 		
-			<p> Guesses Made: </p>
 
-
-
-			<ul id="listedLetters">
-				<li id="guessedLetter"> </li>
-			</ul>	
-
-			<br>
-
-
-
+		<div>
+				<div id="backgroundaudio"> 
+				  	<i class="fa fa-volume-up"></i> 
+				  	<audio id="audiotag" autoplay="" controls="" loop="" preload=""> 
+					  <source id="song" src="" type="audio/ogg"></source> 
+					  <source id="song" src="" type="audio/mpeg"></source> 
+					  Your browser does not support the audio element. 
+				  	</audio> 
+	  			</div>
 
 		</div>
+
+
+		</div>	
+
+
+
+
 
 
 
 
 	</div>
+	<!--- END ROW UNDER HEADER-->
+	
 
+
+
+
+
+
+	<!--- GAME MESSAGE ROW -->
+	<div class="row">
+
+		<div id="gamemessage" class="col-md-12">	
+	  		
+
+	  		<div id="game">
+	    		<p>Type any letter to make a guess!</p>
+			</div>
+
+
+		</div>
+	</div>
+	<!--- END GAME MESSAGE -->
+
+
+
+
+
+
+<!--- BEGIN GAMEDIV ROW -->
+	<div class="row">
+		
+	<div id="gamediv" class="col-md-12">
+	
+	<ul id="word">
+		<li id="guess"> </li>
+	</ul>
+
+
+	</div>
+	</div>
+<!--- END GAME DIV ROW -->
 
 
   <!--- Javascript-->

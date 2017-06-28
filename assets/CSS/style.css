@@ -1,5 +1,13 @@
 body {
-	background-color: #d3d3d3;
+	
+
+
+	/*- --- background-color: #d3d3d3;---*/
+	background-color: black;
+	font-family: 'Bungee Shade', cursive;
+	color: #3d64b8;
+
+
 }
 
 header {
@@ -13,20 +21,44 @@ p {
 	display:block;
 	overflow: hidden;
 }
-#word {
-	margin-bottom: -20px;
-	display: flex;
+#titlerow {
+	margin-top: -85px;
 }
+
 #listLetters {
 	margin-bottom: -20px;
 }
+#title {
+	text-align: center;
+}
 
 
 
 
-
+/* -------------------------- WORD --------------------- */
+#word {
+	margin-left: 40%;
+	display: flex;
+	font-size: 50px;
+}
 #word li {
 	margin-right: 10px;
+}
+#word li::first-child {
+	text-transform: uppercase;
+}
+/* -------------------------- END WORD --------------------- */
+
+#winsAndLosses {
+	font-family: 'Frijole', cursive;
+}
+
+
+/* -------------------------- GESSES MADE --------------------- */
+
+#guessesMade {
+	text-align: center;
+	font-family: 'Frijole', cursive;
 }
 
 #listedLetters li {
@@ -34,3 +66,99 @@ p {
 	display: inline;
 }
 
+/* -------------------------- END GESSES MADE --------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------- AUDIO CODE --------------------- */
+#backgroundaudio { 
+  display: block; 
+  position: fixed; 
+  bottom: -43px; 
+  left: 5px; 
+  -webkit-transition: all 1s ease-in-out; 
+  -moz-transition: all 1s ease-in-out; 
+  -ms-transition: all 1s ease-in-out; 
+  -o-transition: all 1s ease-in-out; 
+  transition: all 1s ease-in-out; 
+  } 
+  #backgroundaudio:hover { 
+  bottom: 0; 
+  -webkit-transition: all 1s ease-in-out; 
+  -moz-transition: all 1s ease-in-out; 
+  -ms-transition: all 1s ease-in-out; 
+  -o-transition: all 1s ease-in-out; 
+  transition: all 1s ease-in-out; 
+  } 
+  #backgroundaudio audio { 
+  background: #ffffff; 
+  padding: 5px; 
+  display: table-cell; 
+  vertical-align: middle; 
+  height: 43px; 
+  z-index: 9998; 
+  } 
+  #backgroundaudio i { 
+  font-size: 40px; 
+  display: block; 
+  background: #ffffff; 
+  padding: 5px; 
+  width: 50px; 
+  float: none; 
+  margin-bottom: -1px; 
+  z-index: 9999; 
+  } 
+	#song {
+	visibility: none;
+	}
+  /*-------------------------END AUDIO CORE-------------------------------*/
+
+
+
+
+
+
+  /*--------------- CHARACTER IMAGE --------------------*/
+  #mysteryCharacter {
+
+  	width: 400px;
+  	height: 300px;
+	
+  }
+
+
+
+
+   /*-----------------------GAME DIV---------------------------------*/
+   #gamediv {
+   	margin: auto;
+
+
+   	
+   }
+ /*-----------------------END GAME DIV---------------------------------*/
+
+
+
+
+
+
+
+  /*-----------------------GAME MESSAGE---------------------------------*/
+
+
+  #gamemessage {
+	text-align: center;
+	font-size: 30px;
+   }
+
+/*-----------------------END GAME MESSAGE---------------------------------*/
