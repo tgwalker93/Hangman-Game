@@ -2,25 +2,12 @@
     var wins = 0;
     var losses = 0;
     var guessesRemaining = 5;
-    var words = ["sonic", "mario"];
+    var words = ["sonic", "mario", "donkeykong", "fox", "kirby", "link", "megaman", "pacman", "pikachu", "spyro"];
     var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
     var alreadyGuessed = false;
     var guessesAlreadyMade = [];
 
 
-    function checkIfArrayIsUnique(arr) {
-    var map = {}, i, size;
-
-    for (i = 0, size = arr.length; i < size; i++){
-        if (map[arr[i]]){
-            return false;
-        }
-
-        map[arr[i]] = true;
-    }
-
-    return true;
-}
 
 
     
@@ -113,10 +100,15 @@
         getMusic: function() {
 
           var audio = document.getElementById("audiotag");
+          audio.innerHTML = "";
           var song = document.createElement("source");
           
           song.setAttribute('src', 'assets/audio/donkeykong.mp3');
+          song.setAttribute('type', 'audio/ogg');
+          song.setAttribute('type', 'audio/mpeg');
           audio.appendChild(song);
+          audio.load();
+          audio.play();
         
       },
 
@@ -140,10 +132,15 @@
         getMusic: function() {
 
           var audio = document.getElementById("audiotag");
+          audio.innerHTML = "";
           var song = document.createElement("source");
           
           song.setAttribute('src', 'assets/audio/fox.mp3');
+          song.setAttribute('type', 'audio/ogg');
+          song.setAttribute('type', 'audio/mpeg');
           audio.appendChild(song);
+          audio.load();
+          audio.play();
         
       },
 
@@ -168,10 +165,15 @@
         getMusic: function() {
 
           var audio = document.getElementById("audiotag");
+          audio.innerHTML = "";
           var song = document.createElement("source");
+          
           song.setAttribute('src', 'assets/audio/kirby.mp3');
+          song.setAttribute('type', 'audio/ogg');
+          song.setAttribute('type', 'audio/mpeg');
           audio.appendChild(song);
-        
+          audio.load();
+          audio.play();
       },
 
         getImage: function() {
@@ -194,10 +196,15 @@
         getMusic: function() {
 
           var audio = document.getElementById("audiotag");
+          audio.innerHTML = "";
           var song = document.createElement("source");
           
           song.setAttribute('src', 'assets/audio/link.mp3');
+          song.setAttribute('type', 'audio/ogg');
+          song.setAttribute('type', 'audio/mpeg');
           audio.appendChild(song);
+          audio.load();
+          audio.play();
         
       },
 
@@ -221,10 +228,15 @@
         getMusic: function() {
 
           var audio = document.getElementById("audiotag");
+          audio.innerHTML = "";
           var song = document.createElement("source");
           
           song.setAttribute('src', 'assets/audio/megaman.mp3');
+          song.setAttribute('type', 'audio/ogg');
+          song.setAttribute('type', 'audio/mpeg');
           audio.appendChild(song);
+          audio.load();
+          audio.play();
         
       },
 
@@ -248,10 +260,15 @@
         getMusic: function() {
 
           var audio = document.getElementById("audiotag");
+          audio.innerHTML = "";
           var song = document.createElement("source");
           
           song.setAttribute('src', 'assets/audio/pacman.mp3');
+          song.setAttribute('type', 'audio/ogg');
+          song.setAttribute('type', 'audio/mpeg');
           audio.appendChild(song);
+          audio.load();
+          audio.play();
         
       },
 
@@ -275,10 +292,15 @@
         getMusic: function() {
 
           var audio = document.getElementById("audiotag");
+          audio.innerHTML = "";
           var song = document.createElement("source");
           
           song.setAttribute('src', 'assets/audio/pikachu.mp3');
+          song.setAttribute('type', 'audio/ogg');
+          song.setAttribute('type', 'audio/mpeg');
           audio.appendChild(song);
+          audio.load();
+          audio.play();
         
       },
 
@@ -302,15 +324,20 @@
         getMusic: function() {
 
           var audio = document.getElementById("audiotag");
+          audio.innerHTML = "";
           var song = document.createElement("source");
           
-          song.setAttribute('src', 'assets/audio/spryo.mp3');
+          song.setAttribute('src', 'assets/audio/spyro.mp3');
+          song.setAttribute('type', 'audio/ogg');
+          song.setAttribute('type', 'audio/mpeg');
           audio.appendChild(song);
+          audio.load();
+          audio.play();
         
       },
 
         getImage: function() {
-          document.getElementById("mysteryCharacter").src = "assets/images/spryo.png";
+          document.getElementById("mysteryCharacter").src = "assets/images/spyro.png";
 
         }
 
@@ -564,7 +591,6 @@
 
 
                       }
-                guessesRemaing = false; 
                   
 
             
