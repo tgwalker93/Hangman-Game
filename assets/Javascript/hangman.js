@@ -1,8 +1,8 @@
-    //countersAndVariables!
+       //countersAndVariables!
     var wins = 0;
     var losses = 0;
     var guessesRemaining = 5;
-    var words = ["sonic", "kirby"];
+    var words = ["sonic", "mario"];
     var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
     var alreadyGuessed = false;
     var guessesAlreadyMade = [];
@@ -49,11 +49,17 @@
 
         getMusic: function() {
 
+
           var audio = document.getElementById("audiotag");
+          audio.innerHTML = "";
           var song = document.createElement("source");
           
           song.setAttribute('src', 'assets/audio/sonic.mp3');
+          song.setAttribute('type', 'audio/ogg');
+          song.setAttribute('type', 'audio/mpeg');
           audio.appendChild(song);
+          audio.load();
+          audio.play();
         
       },
 
@@ -61,8 +67,6 @@
           document.getElementById("mysteryCharacter").src = "assets/images/sonic.png";
 
         }
-
-
 
 
 
@@ -77,10 +81,16 @@
         getMusic: function() {
 
           var audio = document.getElementById("audiotag");
+          audio.innerHTML = "";
           var song = document.createElement("source");
           
           song.setAttribute('src', 'assets/audio/mario.mp3');
+          song.setAttribute('type', 'audio/ogg');
+          song.setAttribute('type', 'audio/mpeg');
           audio.appendChild(song);
+          console.log("MARIO WORKED");
+          audio.load();
+          audio.play();
              },
 
 
@@ -345,7 +355,7 @@
 
 
 // OLD FOR LOOP 
-//	for (var i=0; i < computerGuess.length; i++) {
+//  for (var i=0; i < computerGuess.length; i++) {
       //document.getElementById("letter" + i).innerHTML = "_";
 
 
@@ -354,12 +364,12 @@
 //      var oldUl = document.getElementById("word");
  //     oldUl.parentNode.removeChild(oldLi);
      //  var ul = document.getElementById("word");
-  	  // var li = document.createElement("li");
+      // var li = document.createElement("li");
      //  li.appendChild(document.createTextNode("_"));
      //  li.setAttribute("id", ("letter"+i))
      //  ul.appendChild(li);
   // *********************************************************************************************
-//	  }
+//    }
 
       //computerGuess = words[Math.floor(Math.random() * words.length)];
       displayWord();
@@ -388,7 +398,6 @@
       // Determines which key was pressed.
       var userGuess = event.key;
 
-
       //guessesAlreadyMade.push(userGuess);
       
 
@@ -414,47 +423,30 @@
 
           else if (countLoops===count) {
 
-		         	
-				          	var ul = document.getElementById("listedLetters");
-				            var li = document.createElement("li");
-				            li.appendChild(document.createTextNode(userGuess));
-				            li.setAttribute("id", ("guessedLetter"+i))
-				            ul.appendChild(li);
-		        		  			
-          	      }
-          	  }
-		}
+                    var ul = document.getElementById("listedLetters");
+                    var li = document.createElement("li");
+                    li.appendChild(document.createTextNode(userGuess));
+                    li.setAttribute("id", ("guessedLetter"+i))
+                    ul.appendChild(li);
+                        
+                  }
+              }
+    }
 //************************************* END FOR LOOP ******************************************REGEX ABOVE
 
 
 
-		//USING REGEX TO MAKE SURE THAT typedLetters() DOESN'T LOG NONE REGULAR AND LOWERCASE LETTERS
-		var pat = /^[a-z]+$/;
-	  	if(pat.test(userGuess)){
+    //USING REGEX TO MAKE SURE THAT typedLetters() DOESN'T LOG NONE REGULAR AND LOWERCASE LETTERS
+    var pat = /^[a-z]+$/;
+      if(pat.test(userGuess)){
 
-	  		typedLetters();
-
-
-	  	}	
+        typedLetters();
 
 
+      } 
 
 
 
- //     for(i=0; i<count; i++) {
-
-  //      var ul = document.getElementById("listedLetters");
-   //     var li = document.createElement("li");
-   //     li.appendChild(document.createTextNode(userGuess));
-  //      li.setAttribute("id", ("guessedLetter"+i))
-   //     ul.appendChild(li);
-
-
- //     }
-
-
-
-      // ********************************************************************************************
 
 
 
@@ -469,13 +461,13 @@
 
               if (word[i] === userGuess) {
 
-              		//Changes _ to correct letter(s) guessed
-              		for (i=0; i<word.length; i++) {
-              			if(word[i] === userGuess) {
-              			var li = document.getElementById(("letter"+i)).innerHTML=word[i];       
-              			}
+                  //Changes _ to correct letter(s) guessed
+                  for (i=0; i<word.length; i++) {
+                    if(word[i] === userGuess) {
+                    var li = document.getElementById(("letter"+i)).innerHTML=word[i];       
+                    }
 
-              		}
+                  }
      
     
 
@@ -520,6 +512,8 @@
                         document.onkeyup = function(event) {
                            if(event.which == 13 || event.keyCode == 13) { 
 
+                                document.getElementById("mysteryCharacter").src = "assets/images/mystery.jpg";
+
                                 restartGame();
                                 startGame();
 
@@ -547,20 +541,20 @@
 
 
               //FOR LOOP TEST TO CHECK ARRAY FOR ALREADY GUESSED 
-                if(checkIfArrayIsUnique(guessesAlreadyMade)===false){
-                    alreadyGuessed = true;
-                  }
+
+              
 
 
               //DECREMENTING GUESSES REMAING COUNTER IF GUESS IS WRONG
-            	var pat = /^[a-z]+$/;
-	  			    if(pat.test(userGuess)){
+              var pat = /^[a-z]+$/;
+              if(pat.test(userGuess)){
 
 
 
-                      if(alreadyGuessed===false) {
+                      if(guessesAlreadyMade.indexOf(userGuess)=== -1) {
 
                         guessesRemaining --;
+                        guessesAlreadyMade.push(userGuess);
 
                       }
 
@@ -600,6 +594,9 @@
                   document.onkeyup = function(event) {
                            if(event.which == 13 || event.keyCode == 13) { 
 
+
+
+                                document.getElementById("mysteryCharacter").src = "assets/images/mystery.jpg";
                                 restartGame();
                                 startGame();
 

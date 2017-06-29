@@ -108,9 +108,10 @@ p {
   z-index: 9998; 
   } 
   #backgroundaudio i { 
-  font-size: 40px; 
-  display: block; 
-  background: #ffffff; 
+  font-size: 30px;
+  font-family: 'Frijole', cursive;
+  text-transform: lowercase;
+  display: block;  
   padding: 5px; 
   width: 50px; 
   float: none; 
@@ -132,6 +133,7 @@ p {
 
   	width: 400px;
   	height: 300px;
+  	margin-left: 34px;
 	
   }
 
@@ -141,7 +143,7 @@ p {
    /*-----------------------GAME DIV---------------------------------*/
    #gamediv {
    	margin: auto;
-
+   	margin-top: 15px;
 
    	
    }
@@ -159,6 +161,7 @@ p {
   #gamemessage {
 	text-align: center;
 	font-size: 30px;
+	margin-top: 30px;
    }
 
 /*-----------------------END GAME MESSAGE---------------------------------*/
