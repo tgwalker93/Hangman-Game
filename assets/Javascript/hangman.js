@@ -3,24 +3,15 @@
     var losses = 0;
     var guessesRemaining = 5;
     var words = ["sonic", "mario", "donkeykong", "fox", "kirby", "link", "megaman", "pacman", "pikachu", "spyro"];
-    var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-    var alreadyGuessed = false;
     var guessesAlreadyMade = [];
 
 
 
 
-    
+    //Choose random word for player to guess from array!
     var computerGuess = words[Math.floor(Math.random() * words.length)];
 
     
-    //document.querySelector("#underscores").innerHTML = "_ ".repeat(computerGuess.length);
-
-    //document.querySelector("#word").innerHTML = computerGuess;
-    //var x = document.querySelector("#word").innerHTML;
-    //document.querySelector("#word").style.visibility= "hidden";
-    //document.querySelector("#word").style.replaceAt(0, "s");
-
 
 
 
@@ -54,12 +45,10 @@
           document.getElementById("mysteryCharacter").src = "assets/images/sonic.png";
 
         }
-
-
-
     };
     //END SONIC
     
+
 
     //MARIO
     var mario = {
@@ -85,11 +74,9 @@
           document.getElementById("mysteryCharacter").src = "assets/images/mario.png";
 
         }
-
-
-
     };
      //END MARIO
+
 
 
 
@@ -116,13 +103,9 @@
           document.getElementById("mysteryCharacter").src = "assets/images/donkeykong.png";
 
         }
-
-
-
-
-
     };
     //END DONKEY KONG
+
 
     
     //FOX
@@ -148,13 +131,9 @@
           document.getElementById("mysteryCharacter").src = "assets/images/fox.jpg";
 
         }
-
-
-
-
-
     };
     //END FOX
+
 
 
 
@@ -180,13 +159,9 @@
           document.getElementById("mysteryCharacter").src = "assets/images/kirby.png";
 
         }
-
-
-
-
-
     };
     //END KIRBY
+
 
 
     //LINK
@@ -212,13 +187,9 @@
           document.getElementById("mysteryCharacter").src = "assets/images/link.png";
 
         }
-
-
-
-
-
     };
     //END link
+
 
 
     //MEGA MAN 
@@ -244,13 +215,9 @@
           document.getElementById("mysteryCharacter").src = "assets/images/megaman.png";
 
         }
-
-
-
-
-
     };
     //END MEGA MAN
+
 
 
     //pacman
@@ -276,11 +243,6 @@
           document.getElementById("mysteryCharacter").src = "assets/images/pacman.png";
 
         }
-
-
-
-
-
     };
     //END PACMAN
 
@@ -308,13 +270,9 @@
           document.getElementById("mysteryCharacter").src = "assets/images/pikachu.png";
 
         }
-
-
-
-
-
     };
     //END PIKACHU
+
 
 
     //SPYRO
@@ -340,11 +298,6 @@
           document.getElementById("mysteryCharacter").src = "assets/images/spyro.png";
 
         }
-
-
-
-
-
     };
     //END SPYRO
 
@@ -358,8 +311,6 @@
     eval(computerGuess).getMusic();
     // diplays _ for all letters in word and gives them id by index
     function displayWord() {
-
-    //correct = document.createElement('ul');
 
     for (var i = 0; i < computerGuess.length; i++) {
 
@@ -381,24 +332,7 @@
 
 
 
-// OLD FOR LOOP 
-//  for (var i=0; i < computerGuess.length; i++) {
-      //document.getElementById("letter" + i).innerHTML = "_";
 
-
-
-//      var oldLi = document.getElementById("letter" + i);
-//      var oldUl = document.getElementById("word");
- //     oldUl.parentNode.removeChild(oldLi);
-     //  var ul = document.getElementById("word");
-      // var li = document.createElement("li");
-     //  li.appendChild(document.createTextNode("_"));
-     //  li.setAttribute("id", ("letter"+i))
-     //  ul.appendChild(li);
-  // *********************************************************************************************
-//    }
-
-      //computerGuess = words[Math.floor(Math.random() * words.length)];
       displayWord();
       document.getElementById("listedLetters").innerHTML = "<li id='guess'> </li>";
 
@@ -425,7 +359,6 @@
       // Determines which key was pressed.
       var userGuess = event.key;
 
-      //guessesAlreadyMade.push(userGuess);
       
 
  
@@ -480,8 +413,7 @@
       //Function that takes a string parameter and sees if userGuess is in that string
       function checkList(word) {
 
-      //var ul = document.getElementById("word");
-      //var items = ul.getElementsByTagName("li");
+
         var wrongCounter = 0;
         //FOR LOOP TO ITERATE THROUGH WORD AND CHECK IF LETTER IS THE LETTER THAT THE USER TYPED ----------------------
         for(i=0; i<word.length; i++) {
@@ -637,14 +569,6 @@
                 }
             }
           }
-
-
-      //else {
-      //guessesRemaining--;
-      //var guess = "You guessed wrong! Number of guesses remaining: " + guessesRemaining; 
-      //document.querySelector("#game").innerHTML = guess;
-      //return null;
-      //  }   
     }
 
 
