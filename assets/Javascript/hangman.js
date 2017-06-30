@@ -64,7 +64,6 @@
           song.setAttribute('type', 'audio/ogg');
           song.setAttribute('type', 'audio/mpeg');
           audio.appendChild(song);
-          console.log("MARIO WORKED");
           audio.load();
           audio.play();
              },
@@ -434,26 +433,19 @@
                   //CHECK IF PLAYER WON STARTS HERE-------------------------------------------------------------
                     var saveWord = "";
 
-        
-
-
-
                   //for loop to check player's progress on word
                   for (var i = 0; i < computerGuess.length; ++i) {
                     var letter = document.getElementById(("letter"+i)).innerHTML;
                     var saveWord = saveWord.concat(letter);
                   }
 
-
-
-
-
-
                   //check's if player already won ------------------------
                   if (saveWord===word){
                     var youWin = "YOU WON THIS GAME! Press Enter to play again!"
                     document.querySelector("#game").innerHTML = youWin;
                     wins ++;
+
+
                   //UPDATES WIN AND LOSS COUNTER -----------------------------
                   guessesRemaining = 5; 
                   var winCounter = "Wins: " + wins + "<br />" + 
@@ -465,7 +457,7 @@
                     document.querySelector("#game").innerHTML = gameover;
                     eval(computerGuess).getImage();
 
-                   // guessesAlreadyMade = [];
+                    guessesAlreadyMade = [];
                     //IF USER PRESS ENTER AFTER WINNING ----------------------------------------------------------
 
                         document.onkeyup = function(event) {
@@ -475,23 +467,19 @@
 
                                 restartGame();
                                 startGame();
-
-
-
                         }
 
-
-
                       }
 
-
                       }
-            //CHECK IF PLAYER WON ENDS HERE ------------------------------------------------------
+            //CHECK IF PLAYER WON ENDS HERE -------------------------------------------------------------
               
                  }
             else {
               wrongCounter ++;
             }
+
+
             if (wrongCounter===word.length) { 
 
               
@@ -523,8 +511,6 @@
 
 
                       }
-                  
-
             
 
               //UPDATES WIN AND LOSS COUNTER -----------------------------
@@ -548,7 +534,7 @@
                   //****************************************************************
 
                    //PLAYER CAN PRESS ENTER TO PLAY AGAIN! ---------------------
-                   //guessesAlreadyMade = [];
+                   guessesAlreadyMade = [];
                   document.onkeyup = function(event) {
                            if(event.which == 13 || event.keyCode == 13) { 
 
