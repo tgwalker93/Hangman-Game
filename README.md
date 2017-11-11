@@ -1,6 +1,6 @@
 ![https://github.com/tgwalker93/Hangman-Game/blob/master/assets/images/mystery.jpg](https://github.com/tgwalker93/Hangman-Game/blob/master/assets/images/mystery.jpg)
 
-# WoW Strategy Game
+# Classic Video Game Hangman
 A classic video game themed hang-man game using only HTML, Javascript, and CSS.
 
 
